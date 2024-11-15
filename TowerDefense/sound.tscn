@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdk8wjpxu1gkc"]
+
+[ext_resource type="Script" path="res://Sound.gd" id="1_7i3o3"]
+[ext_resource type="AudioStream" uid="uid://dmkpnarttojpj" path="res://assets/Fight1.ogg" id="2_l7ex1"]
+[ext_resource type="AudioStream" uid="uid://baqqfn45b5svs" path="res://assets/Hit.ogg" id="3_pm10j"]
+
+[node name="Sound" type="Node" node_paths=PackedStringArray("n_bgm", "n_se_list")]
+script = ExtResource("1_7i3o3")
+n_bgm = NodePath("AudioStreamPlayer")
+n_se_list = [NodePath("AudioStreamPlayer2")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_l7ex1")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pm10j")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0x2uct3nd0j1"]
+
+[ext_resource type="Script" path="res://castle.gd" id="1_mdnhk"]
+[ext_resource type="Texture2D" uid="uid://rcvqjvxjoejo" path="res://assets/castle.png" id="1_xm4qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8j8w"]
+size = Vector2(334, 500)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4ywv"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hed23"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="Castle" type="Node2D" node_paths=PackedStringArray("n_sprite", "n_health")]
+script = ExtResource("1_mdnhk")
+n_sprite = NodePath("CastleArea/Sprite2D")
+n_health = NodePath("ColorRect/ProgressBar")
+
+[node name="CastleArea" type="Area2D" parent="."]
+position = Vector2(0, -256)
+
+[node name="Sprite2D" type="Sprite2D" parent="CastleArea"]
+texture = ExtResource("1_xm4qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CastleArea"]
+shape = SubResource("RectangleShape2D_w8j8w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -211.0
+offset_top = -576.0
+offset_right = 214.0
+offset_bottom = -526.0
+color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_h4ywv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hed23")
+value = 100.0
+show_percentage = false
+
+[connection signal="area_entered" from="CastleArea" to="." method="_on_castle_area_area_entered"]
