@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://jjxrm5bl730b"]
+
+[ext_resource type="Script" path="res://common/crate.gd" id="1_dbtbc"]
+[ext_resource type="Texture2D" uid="uid://b628bde35dh5w" path="res://assets/images/crate.png" id="2_1y2m8"]
+[ext_resource type="Texture2D" uid="uid://bj5dicuaabm7x" path="res://assets/images/crate_white.png" id="3_ttivq"]
+
+[node name="Crate" type="Node2D" node_paths=PackedStringArray("n_spr", "n_spr2")]
+script = ExtResource("1_dbtbc")
+n_spr = NodePath("Sprite2D")
+n_spr2 = NodePath("Sprite2D2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1y2m8")
+hframes = 2
+vframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_ttivq")

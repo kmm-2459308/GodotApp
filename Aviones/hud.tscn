@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2fi3ya1bnf4u"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_324rs"]
+[ext_resource type="FontFile" uid="uid://4d4d8uiic7ol" path="res://assets/fonts/Kenney Mini.ttf" id="2_j3fdg"]
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("n_score", "n_game_over", "n_complete")]
+script = ExtResource("1_324rs")
+n_score = NodePath("Label")
+n_game_over = NodePath("Label2")
+n_complete = NodePath("Label3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 79.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j3fdg")
+text = "Score :  0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.0
+offset_right = 50.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j3fdg")
+text = "Game  Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -15.0
+offset_right = 63.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_j3fdg")
+text = "Level  Complete"
+horizontal_alignment = 1
+vertical_alignment = 1

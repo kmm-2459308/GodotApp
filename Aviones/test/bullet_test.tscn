@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2epffc05fn7m"]
+
+[ext_resource type="Script" path="res://test/BulletTest.gd" id="1_2r83h"]
+[ext_resource type="PackedScene" uid="uid://hw3ptdli6ekk" path="res://bullet.tscn" id="2_15hrr"]
+
+[node name="BulletTest" type="Node"]
+script = ExtResource("1_2r83h")
+
+[node name="Bullet" parent="." instance=ExtResource("2_15hrr")]
